@@ -18,25 +18,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Change this text" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mL7-jx-AdE">
-                                <rect key="frame" x="16" y="145" width="343" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mUJ-Kq-99a">
+                                <rect key="frame" x="25" y="65" width="325" height="93.5"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mL7-jx-AdE">
+                                        <rect key="frame" x="0.0" y="0.0" width="325" height="43.5"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Change this text">
+                                                <attributes>
+                                                    <font key="NSFont" size="33" name=".AppleSystemUIFont"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ii2-SH-iW0">
+                                        <rect key="frame" x="0.0" y="63.5" width="325" height="30"/>
+                                        <state key="normal" title="Tap to chage the text up there."/>
+                                        <connections>
+                                            <action selector="buttonChangy:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9bB-In-IhO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="KGm-Ek-wyP">
+                                <rect key="frame" x="25" y="168.5" width="325" height="382"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aloe" translatesAutoresizingMaskIntoConstraints="NO" id="uTF-Y6-Nlb">
+                                        <rect key="frame" x="0.0" y="0.0" width="325" height="325"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="uTF-Y6-Nlb" secondAttribute="height" id="L6a-sV-HAp"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofl-YX-fsd">
+                                        <rect key="frame" x="117" y="352" width="91" height="30"/>
+                                        <state key="normal" title="Rotate Image"/>
+                                        <connections>
+                                            <action selector="rotateImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VKc-YE-7dY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="mL7-jx-AdE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="KzC-Fx-QnV"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mL7-jx-AdE" secondAttribute="trailing" constant="16" id="nOC-Rr-pXI"/>
-                            <constraint firstItem="mL7-jx-AdE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="125" id="tA4-Ug-Rx1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KGm-Ek-wyP" secondAttribute="trailing" constant="25" id="29P-PF-8MS"/>
+                            <constraint firstItem="mUJ-Kq-99a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="Nbc-Zi-GJ2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mUJ-Kq-99a" secondAttribute="trailing" constant="25" id="Oci-DW-UeB"/>
+                            <constraint firstItem="KGm-Ek-wyP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="Qds-Ej-FGq"/>
+                            <constraint firstItem="mUJ-Kq-99a" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="45" id="aTB-eC-afi"/>
+                            <constraint firstItem="KGm-Ek-wyP" firstAttribute="top" secondItem="mUJ-Kq-99a" secondAttribute="bottom" constant="10" id="h8d-1R-4YL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="aloeImage" destination="uTF-Y6-Nlb" id="bfk-xa-Y5y"/>
+                        <outlet property="changingText" destination="mL7-jx-AdE" id="6dB-km-P4a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="aloe" width="768" height="1024"/>
+    </resources>
 </document>
