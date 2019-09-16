@@ -43,7 +43,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="KGm-Ek-wyP">
-                                <rect key="frame" x="25" y="168.5" width="325" height="439"/>
+                                <rect key="frame" x="25" y="168.5" width="325" height="382"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aloe" translatesAutoresizingMaskIntoConstraints="NO" id="uTF-Y6-Nlb">
                                         <rect key="frame" x="0.0" y="0.0" width="325" height="325"/>
@@ -51,20 +51,25 @@
                                             <constraint firstAttribute="width" secondItem="uTF-Y6-Nlb" secondAttribute="height" id="L6a-sV-HAp"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofl-YX-fsd">
-                                        <rect key="frame" x="106" y="352" width="113" height="30"/>
-                                        <state key="normal" title="Rotate aloe right"/>
-                                        <connections>
-                                            <action selector="rotateImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VKc-YE-7dY"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBE-EE-vWf">
-                                        <rect key="frame" x="110.5" y="409" width="104" height="30"/>
-                                        <state key="normal" title="Rotate aloe left"/>
-                                        <connections>
-                                            <action selector="rotateLeftAloe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CHF-WP-w9D"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FBo-cr-c1h">
+                                        <rect key="frame" x="50" y="352" width="225" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBE-EE-vWf">
+                                                <rect key="frame" x="0.0" y="0.0" width="104" height="30"/>
+                                                <state key="normal" title="Rotate aloe left"/>
+                                                <connections>
+                                                    <action selector="rotateLeftAloe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CHF-WP-w9D"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofl-YX-fsd">
+                                                <rect key="frame" x="112" y="0.0" width="113" height="30"/>
+                                                <state key="normal" title="Rotate aloe right"/>
+                                                <connections>
+                                                    <action selector="rotateImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VKc-YE-7dY"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -86,7 +91,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="466" y="136"/>
         </scene>
     </scenes>
     <resources>
