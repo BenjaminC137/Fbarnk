@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var changingText: UITextField!
     @IBOutlet weak var aloeImage: UIImageView!
     
+    var rotation:CGFloat = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -22,8 +24,18 @@ class ViewController: UIViewController {
     }
     
     @IBAction func rotateImage(_ sender: UIButton) {
+        rotation += CGFloat.pi / 2
+        print(rotation)
+        print(CGFloat.pi)
+        RotateAloe()
+    }
+    @IBAction func rotateLeftAloe(_ sender: UIButton) {
+        rotation -= CGFloat.pi / 2
+        RotateAloe()
+    }
+    func RotateAloe(){
         UIView.animate(withDuration: 0.5, animations: {
-            self.aloeImage.transform = CGAffineTransform(rotationAngle: (180.0 * .pi) / 180.0)
+            self.aloeImage.transform = CGAffineTransform(rotationAngle: self.rotation)
         })
     }
 }
